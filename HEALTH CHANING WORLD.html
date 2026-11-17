@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Health in a Changing World - Anime Comic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Dela+Gothic+One&family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101019;--coral:#ff5f64;--teal:#16c6b7;--gold:#ffd447;--sky:#60c9ff;--violet:#8c5cff;--paper:#fff9ed;--dur:11s}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#090914;color:white;overflow-x:hidden;font-family:"Zen Maru Gothic",sans-serif}button{font:inherit}
+body{display:flex;align-items:center;justify-content:center;padding:16px;min-height:100dvh}
+#app{width:min(100%,520px);display:grid;gap:12px;user-select:none}.stage{position:relative;width:100%;aspect-ratio:4/5;border:4px solid var(--ink);border-radius:20px;overflow:hidden;background:#222;box-shadow:0 18px 55px #000b;isolation:isolate;touch-action:manipulation}
+.scene{position:absolute;inset:0;display:none;overflow:hidden;padding:6%;background:linear-gradient(145deg,var(--a),var(--b));color:var(--ink)}.scene.active{display:block}.scene::before{content:"";position:absolute;inset:0;opacity:.22;background-image:radial-gradient(#101019 1.2px,transparent 1.3px);background-size:9px 9px;mix-blend-mode:multiply}.scene::after{content:"";position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,transparent 0deg 7deg,#fff3 8deg 9deg);animation:flicker .8s steps(2) infinite;z-index:0}
+.scene>*{position:relative;z-index:2}.kicker{font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:clamp(10px,2.5vw,14px)}h1,h2{font-family:Bangers,cursive;letter-spacing:.04em;margin:.1em 0;line-height:.88;text-shadow:3px 3px 0 white,-2px -2px 0 white}h1{font-size:clamp(42px,13vw,72px)}h2{font-size:clamp(34px,10vw,58px)}.slam{transform:rotate(-3deg);animation:slam .7s cubic-bezier(.2,1.7,.3,1) both}.narration{display:inline-block;background:var(--gold);border:3px solid var(--ink);padding:8px 12px;font-weight:900;box-shadow:5px 5px 0 var(--ink);max-width:92%;animation:pop .5s .6s both}.bubble{position:absolute;background:white;border:3px solid var(--ink);border-radius:50%;padding:10px 14px;font-weight:900;line-height:1.25;box-shadow:4px 4px 0 #0003;max-width:49%;animation:pop .5s both}.bubble::after{content:"";position:absolute;width:18px;height:18px;background:white;border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg);bottom:-10px;left:28%}.sfx{position:absolute;font-family:"Dela Gothic One",sans-serif;font-size:clamp(28px,9vw,52px);color:white;-webkit-text-stroke:2px var(--ink);text-shadow:4px 5px 0 var(--coral);transform:rotate(-10deg);animation:pulse .8s infinite alternate}.panel{background:#fff;border:4px solid var(--ink);padding:10px;box-shadow:7px 7px 0 var(--ink);transform:skew(-3deg) rotate(-2deg)}
+.cast{position:absolute;left:3%;right:3%;bottom:4%;height:47%;display:flex;align-items:flex-end;justify-content:center;gap:1%;animation:float 2.8s ease-in-out infinite}.char{position:relative;width:29%;height:92%;filter:drop-shadow(4px 5px 0 #111)}.head{position:absolute;top:3%;left:17%;width:67%;aspect-ratio:1;border:4px solid var(--ink);border-radius:48% 48% 44% 44%;background:#ffe6d5;overflow:visible}.hair{position:absolute;inset:-8% -5% 45%;background:var(--hair);border:4px solid var(--ink);border-radius:55% 55% 28% 25%;z-index:2}.hair::after{content:"";position:absolute;left:9%;right:5%;bottom:-32%;height:55%;background:var(--hair);clip-path:polygon(0 0,20% 38%,36% 0,53% 43%,70% 0,83% 35%,100% 0,91% 100%,4% 100%)}.eye{position:absolute;top:48%;width:24%;height:25%;background:#fff;border:3px solid var(--ink);border-radius:50%;animation:blink 4.3s infinite}.eye.l{left:18%}.eye.r{right:18%}.eye::before{content:"";position:absolute;width:45%;height:65%;left:28%;top:17%;border-radius:50%;background:var(--eye,#42316c);box-shadow:inset 0 0 0 3px var(--ink)}.eye::after{content:"";position:absolute;width:25%;height:25%;left:48%;top:24%;border-radius:50%;background:white}.blush{position:absolute;top:76%;left:10%;right:10%;height:8%;background:radial-gradient(ellipse at 10% 50%,#ff88a5 0 20%,transparent 22%),radial-gradient(ellipse at 90% 50%,#ff88a5 0 20%,transparent 22%)}.mouth{position:absolute;left:42%;bottom:7%;width:18%;height:9%;border-bottom:3px solid var(--ink);border-radius:50%}.body{position:absolute;top:48%;left:12%;width:76%;height:48%;background:var(--outfit);border:4px solid var(--ink);border-radius:30% 30% 8% 8%}.body::before,.body::after{content:"";position:absolute;top:15%;width:28%;height:66%;background:var(--outfit);border:4px solid var(--ink);border-radius:50px}.body::before{left:-19%;transform:rotate(18deg)}.body::after{right:-19%;transform:rotate(-18deg)}
+.mascot{position:absolute;width:72px;height:66px;right:5%;bottom:6%;animation:heart .75s infinite alternate;filter:drop-shadow(3px 4px 0 #111)}.heart{width:45px;height:45px;background:var(--coral);transform:rotate(45deg);border:3px solid var(--ink);position:absolute;left:12px;top:8px}.heart::before,.heart::after{content:"";position:absolute;width:45px;height:45px;background:var(--coral);border:3px solid var(--ink);border-radius:50%}.heart::before{left:-23px;top:-3px}.heart::after{left:-3px;top:-23px}.mface{position:absolute;z-index:3;left:24px;top:15px;font-weight:900;font-size:18px}.cape{position:absolute;width:44px;height:45px;right:-2px;top:17px;background:var(--teal);border:3px solid var(--ink);clip-path:polygon(0 0,100% 40%,20% 100%)}
+.stat{font-family:Bangers;font-size:clamp(53px,17vw,90px);color:white;-webkit-text-stroke:3px var(--ink);text-shadow:6px 7px 0 var(--violet);line-height:1}.counter{display:inline-block}.chart{height:25px;border:3px solid var(--ink);background:#fff;margin:10px 0;overflow:hidden}.fill{height:100%;width:0;background:repeating-linear-gradient(45deg,var(--coral) 0 10px,var(--gold) 10px 20px);animation:fill 2s 1.3s forwards}.quote{background:#fff;border:4px solid var(--ink);padding:18px;font-weight:700;box-shadow:8px 8px 0 var(--violet);transform:rotate(-1deg);font-size:clamp(13px,3.4vw,18px)}.quote small{display:block;margin-top:12px;font-weight:900;color:#6540c8}.rules{display:grid;gap:8px;margin-top:10px}.rule{background:#fff;border:3px solid var(--ink);padding:8px;font-weight:900;animation:pop .4s both}.spark{position:absolute;font-size:28px;animation:petal 4s linear infinite}.spark:nth-of-type(2){left:15%;animation-delay:-1s}.spark:nth-of-type(3){left:75%;animation-delay:-2s}.spark:nth-of-type(4){left:45%;animation-delay:-3s}
+.controls{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px}.segments{display:flex;gap:5px}.seg{height:12px;flex:1;border:0;padding:0;border-radius:20px;background:#35354a;cursor:pointer;overflow:hidden}.seg::after{content:"";display:block;height:100%;width:0;background:linear-gradient(90deg,var(--coral),var(--gold))}.seg.done::after{width:100%}.seg.current::after{animation:progress var(--dur) linear forwards}.paused .seg.current::after{animation-play-state:paused}.buttons{display:flex;gap:6px}.btn{width:42px;height:42px;border-radius:50%;border:2px solid #8b8ba8;background:#1d1d2b;color:white;cursor:pointer;font-weight:900}.btn:hover,.btn:focus{background:var(--violet);outline:2px solid white}.counterLabel{text-align:center;color:#c7c7dc;font-weight:900}.replay{position:absolute;z-index:9;left:50%;bottom:12%;transform:translateX(-50%);border:4px solid var(--ink);background:var(--gold);padding:12px 24px;font:28px Bangers;box-shadow:6px 6px 0 var(--ink);display:none}.finished .replay{display:block}
+@keyframes slam{from{opacity:0;transform:scale(2.5) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(-3deg)}}@keyframes pop{from{opacity:0;transform:scale(.2) rotate(-8deg)}to{opacity:1;transform:scale(1)}}@keyframes pulse{to{transform:rotate(-5deg) scale(1.10)}}@keyframes float{50%{transform:translateY(-8px)}}@keyframes heart{to{transform:scale(1.14)}}@keyframes blink{0%,46%,50%,100%{transform:scaleY(1)}48%{transform:scaleY(.08)}}@keyframes flicker{50%{opacity:.1}}@keyframes fill{to{width:100%}}@keyframes progress{to{width:100%}}@keyframes petal{from{top:-10%;transform:rotate(0)}to{top:110%;transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.fill{width:100%}.seg.current::after{width:100%}}
+</style>
+</head>
+<body>
+<main id="app" aria-label="Self-playing comic">
+<section class="stage" id="stage">
+  <article class="scene active" style="--a:#60c9ff;--b:#8c5cff">
+    <div class="kicker">Pennsylvania Conference for Women</div><h1 class="slam">Health in a<br>Changing World</h1>
+    <div class="narration">The intersection of climate health and human health.</div>
+    <div class="bubble" style="top:47%;left:7%;animation-delay:1.2s">How can a changing environment affect our health?</div>
+    <div class="sfx" style="right:6%;top:50%">ピカッ</div>
+    <div class="cast">
+      <div class="char"><div class="head"><div class="hair" style="--hair:#16c6b7"></div><i class="eye l"></i><i class="eye r"></i><i class="blush"></i><i class="mouth"></i></div><div class="body" style="--outfit:#ff5f64"></div></div>
+      <div class="char"><div class="head"><div class="hair" style="--hair:#38255e"></div><i class="eye l"></i><i class="eye r"></i><i class="blush"></i><i class="mouth"></i></div><div class="body" style="--outfit:#60c9ff"></div></div>
+      <div class="char"><div class="head"><div class="hair" style="--hair:#ff666d"></div><i class="eye l"></i><i class="eye r"></i><i class="blush"></i><i class="mouth"></i></div><div class="body" style="--outfit:#fff"></div></div>
+    </div><div class="mascot"><div class="cape"></div><div class="heart"></div><div class="mface">•ᴗ•</div></div>
+  </article>
+  <article class="scene" style="--a:#ff7e73;--b:#ffd447">
+    <div class="kicker">The experience comes alive</div><h2 class="slam">Nearly</h2><div class="stat"><span class="counter" data-to="2000">0</span></div>
+    <div class="narration">attendees engaged with BMS' <b>Health in a Changing World</b> experience.</div>
+    <div class="panel" style="margin-top:18px"><b>They explored:</b><br>How our changing environment can affect health<br>and what each of us can do to make a difference.</div>
+    <div class="sfx" style="right:4%;bottom:24%">ワイワイ</div><div class="bubble" style="bottom:7%;left:8%;animation-delay:1.4s">Awareness starts here!</div>
+    <div class="mascot"><div class="cape"></div><div class="heart"></div><div class="mface">•ᴗ•</div></div>
+  </article>
+  <article class="scene" style="--a:#16c6b7;--b:#60c9ff">
+    <div class="kicker">An accessible, interactive experience</div><h2 class="slam">Learn.<br>Explore.<br>Act.</h2>
+    <div class="narration">Created through collaboration across Sustainability &amp; Social Impact, Occupational Health, Corporate Giving, Global Inclusion &amp; Culture and the HCM team.</div>
+    <div class="rules"><div class="rule" style="animation-delay:.8s">01 · LEARN the connection</div><div class="rule" style="animation-delay:1.1s">02 · EXPLORE the experience</div><div class="rule" style="animation-delay:1.4s">03 · ACT in the community</div></div>
+    <div class="sfx" style="right:3%;bottom:5%">ドン!</div>
+  </article>
+  <article class="scene" style="--a:#8c5cff;--b:#ff5f64">
+    <div class="kicker">Interactive discovery</div><h2 class="slam">The Body Map</h2>
+    <div class="panel" style="margin-top:8px;height:45%;display:grid;place-items:center;background:linear-gradient(90deg,#fff,#dff9ff)"><svg viewBox="0 0 200 240" width="48%" height="100%" aria-label="Abstract human body map"><g stroke="#101019" stroke-width="8" stroke-linecap="round" fill="none"><circle cx="100" cy="38" r="24" fill="#ffd447"/><path d="M100 66V148M55 92L100 78L145 92M100 148L68 213M100 148L132 213"/></g><path d="M99 108c-20-22-38 10 1 37 39-27 21-59-1-37" fill="#ff5f64" stroke="#101019" stroke-width="5"/></svg></div>
+    <div class="bubble" style="right:5%;top:40%;animation-delay:1s">Environmental factors can affect different aspects of human health, including heart health.</div>
+    <div class="sfx" style="left:6%;bottom:5%">ドクン</div><div class="mascot"><div class="cape"></div><div class="heart"></div><div class="mface">•ᴗ•</div></div>
+  </article>
+  <article class="scene" style="--a:#ffd447;--b:#ff7e73">
+    <div class="kicker">Heart-health education</div><h2 class="slam">More than</h2><div class="stat"><span class="counter" data-to="900">0</span></div><div class="narration">visitors engaged with a BMS cardiovascular Medical Science Liaison and representatives from the Peyton Walker Foundation.</div>
+    <div class="rules"><div class="rule">Hypertrophic cardiomyopathy (HCM)</div><div class="rule">CPR</div><div class="rule">AED awareness</div></div>
+    <div class="sfx" style="right:5%;bottom:4%">ドクン</div>
+  </article>
+  <article class="scene" style="--a:#60c9ff;--b:#16c6b7">
+    <div class="kicker">Awareness becomes action</div><h2 class="slam">Approximately<br>one-third</h2>
+    <div class="narration">of visitors scanned the Community Impact Fund nomination QR code.</div><div class="chart"><div class="fill" style="max-width:33.333%"></div></div>
+    <div class="panel" style="margin-top:14px"><b>Most visited</b> of the five interactive kiosks: the nonprofit nomination experience.</div>
+    <div class="quote" style="margin-top:16px">“Climate and health are not separate conversations. When a changing environment affects people's health, awareness alone doesn't change outcomes for patients and families. Connecting it to action in their own communities does, and that’s what the Community Impact Fund is designed to do.”<small>Jennifer Evans, Executive Director, Sustainability &amp; Social Impact</small></div>
+  </article>
+  <article class="scene" style="--a:#8c5cff;--b:#60c9ff">
+    <div class="kicker">The nomination mission</div><h2 class="slam">Nominate an<br>organization</h2>
+    <div class="narration">Nominations close December 15, 2026.</div>
+    <div class="rules"><div class="rule">Nominations are anonymous and submitted directly to BMS Corporate Giving.</div><div class="rule">Eligible organizations may be invited to apply for a Community Impact Fund grant.</div><div class="rule">Corporate Giving independently administers the grant process.</div><div class="rule">BMS business and field teams do not participate in reviewing nominations, selecting applicants or making grant award decisions.</div></div>
+    <div class="sfx" style="right:4%;bottom:2%">GO!</div>
+  </article>
+  <article class="scene" style="--a:#ff7e73;--b:#ffd447">
+    <span class="spark">✦</span><span class="spark">🌸</span><span class="spark">✦</span><span class="spark">🌸</span>
+    <div class="kicker">Help us extend the reach</div><h2 class="slam">Awareness<br>into Action!</h2>
+    <div class="narration">If an eligible organization comes to mind, <b>nominate it</b>. And consider <b>sharing this opportunity with colleagues and community networks</b> who may know an organization making a difference.</div>
+    <div class="panel" style="margin-top:20px;font-weight:900;font-size:clamp(17px,4.7vw,25px)">Together, we can turn awareness into action for healthier, more resilient communities.</div>
+    <div class="bubble" style="bottom:7%;left:7%;animation-delay:1.2s">Learn. Explore. Act.</div>
+    <div class="sfx" style="right:4%;bottom:15%">キラキラ</div><div class="mascot"><div class="cape"></div><div class="heart"></div><div class="mface">•ᴗ•</div></div>
+  </article>
+  <button class="replay" id="replay">Replay ↻</button>
+</section>
+<div class="controls"><div class="segments" id="segments" aria-label="Scene navigation"></div><div class="buttons"><button class="btn" id="prev" aria-label="Previous">◀</button><button class="btn" id="play" aria-label="Pause">Ⅱ</button><button class="btn" id="next" aria-label="Next">▶</button></div></div>
+<div class="counterLabel" id="sceneCount">1 / 8</div>
+</main>
+<script>
+(()=>{const scenes=[...document.querySelectorAll('.scene')],stage=document.getElementById('stage'),segments=document.getElementById('segments'),play=document.getElementById('play'),count=document.getElementById('sceneCount'),replay=document.getElementById('replay');const durations=[11000,11000,11000,11000,11000,13000,14000,12000];let index=0,playing=true,timer=null,started=Date.now(),remaining=durations[0];
+scenes.forEach((_,i)=>{let b=document.createElement('button');b.className='seg';b.setAttribute('aria-label','Go to scene '+(i+1));b.onclick=e=>{e.stopPropagation();show(i)};segments.appendChild(b)});const segs=[...segments.children];
+function animateNumbers(){scenes[index].querySelectorAll('.counter').forEach(el=>{let goal=+el.dataset.to,start=performance.now();function tick(now){let p=Math.min((now-start)/1800,1),v=Math.floor(goal*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString();if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)})}
+function resetAnimations(el){el.querySelectorAll('*').forEach(n=>{n.style.animation='none';void n.offsetHeight;n.style.animation=''})}
+function schedule(ms=durations[index]){clearTimeout(timer);remaining=ms;started=Date.now();if(playing)timer=setTimeout(()=>{if(index<scenes.length-1)show(index+1);else finish()},ms)}
+function show(i){index=Math.max(0,Math.min(scenes.length-1,i));stage.classList.remove('finished');scenes.forEach((s,j)=>s.classList.toggle('active',j===index));segs.forEach((s,j)=>{s.className='seg'+(j<index?' done':j===index?' current':'');s.style.setProperty('--dur',durations[index]+'ms')});count.textContent=(index+1)+' / '+scenes.length;resetAnimations(scenes[index]);animateNumbers();schedule()}
+function finish(){playing=false;clearTimeout(timer);stage.classList.add('finished');play.textContent='▶';segs[index].className='seg done'}
+function toggle(){if(playing){playing=false;remaining-=Date.now()-started;clearTimeout(timer);document.getElementById('app').classList.add('paused');play.textContent='▶'}else{playing=true;document.getElementById('app').classList.remove('paused');play.textContent='Ⅱ';schedule(Math.max(200,remaining))}}
+document.getElementById('prev').onclick=e=>{e.stopPropagation();show(index-1)};document.getElementById('next').onclick=e=>{e.stopPropagation();index===scenes.length-1?finish():show(index+1)};play.onclick=e=>{e.stopPropagation();toggle()};replay.onclick=e=>{e.stopPropagation();playing=true;play.textContent='Ⅱ';show(0)};
+stage.addEventListener('click',e=>{if(e.target===replay)return;let x=e.clientX-stage.getBoundingClientRect().left,w=stage.clientWidth;if(x<w*.33)show(index-1);else if(x>w*.67){index===scenes.length-1?finish():show(index+1)}else toggle()});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(index-1);if(e.key==='ArrowRight')index===scenes.length-1?finish():show(index+1);if(e.code==='Space'){e.preventDefault();toggle()}});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){playing=false;play.textContent='▶';clearTimeout(timer)}show(0);
+})();
+</script>
+</body></html>
